@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>STRING GENERATOR</title>
+  </head>
+
+  <body>
+    <script>
+   /* // RANDOM STRING GENERATOR
+      let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+      let randomString = '';
+
+      while (randomString.length < 6) {
+        let randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+        randomString += randomLetter; // add the random letter to the string
+        console.log(`Random letter added: ${randomLetter}`);
+      }
+
+      console.log(`Final random string: ${randomString}`); */
+
+      console.log('\n')
+
+let input = 'javascript is awesome';
+let output = '';
+
+// Use a for loop
+for (let i = 0; i < input.length; i++) {
+  // Get the current letter at index 'i'
+  let letter = input[i];
+
+  if (letter === 'a') {
+    output += '4';
+  } else if (letter === 'e') {
+    output += '3';
+  } else if (letter === 'i') {
+    output += '1';
+  } else if (letter === 'o') {
+    output += '0';
+  } else {
+    // If the letter is not one of the ones to be replaced, add the original letter
+    output += letter;
+  }
+}
+
+// Log the final output
+console.log(output);
+
+    </script>
+  </body>
+</html>
