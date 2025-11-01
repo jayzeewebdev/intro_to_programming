@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HANGMAN GAME</title>
+  </head>
+
+  <body>
+    <h1>HANGMAN</h1>
+    
+    <script>
+        function pickWord() {
+  var words = [
+    "javascript",
+    "monkey",
+    "amazing",
+    "pancake",
+    "developer",
+    "hangman",
+    "function",
+    "variable",
+    "browser",
+    "coding",
+    "zebra",
+    "lion",
+    "elephant"
+  ];
+  return words[Math.floor(Math.random() * words.length)];
+}
+
+function setupAnswerArray(word) {
+  var answerArray = [];
+  for (var i = 0; i < word.length; i++) {
+    answerArray[i] = "_";
+  }
+  return answerArray;
+}
+
+function showPlayerProgress(answerArray) {
+  alert(answerArray.join(" "));
+}
+
+function getGuess() {
+  return prompt("Guess a letter, or click Cancel to stop playing.");
+}
+
+function updateGameState(guess, word, answerArray) {
+  var appearances = 0;
+  for (var j = 0; j < word.length; j++) {
+    if (word[j] === guess && answerArray[j] === "_") {
+      answerArray[j] = guess;
+      appearances++;
+    }
+  }
+  return appearances;
+}
+
+function showAnswerAndCongratulatePlayer(answerArray, word) {
+  alert(answerArray.join(" "));
+  alert("Good job! The answer was " + word);
+}
+
+// Main game logic
+var word = pickWord();
+var answerArray = setupAnswerArray(word);
+var remainingLetters = word.length;
+var remainingGuesses = 10; // ✅ limit number of guesses
+
+while (remainingLetters > 0 && remainingGuesses > 0) {
+  showPlayerProgress(answerArray);
+  var guess = getGuess();
+  if (guess === null) {
+    break;
+  } else if (guess.length !== 1) {
+    alert("Please enter a single letter.");
+  } else {
+    var correctGuesses = updateGameState(guess, word, answerArray);
+    remainingLetters -= correctGuesses;
+    remainingGuesses--; // ✅ decrease one guess each turn
+  }
+}
+
+if (remainingLetters === 0) {
+  showAnswerAndCongratulatePlayer(answerArray, word);
+} else {
+  alert("Sorry, you ran out of guesses! The word was " + word);
+}
+
+    </script>
+    
+  </body>
+</html>
