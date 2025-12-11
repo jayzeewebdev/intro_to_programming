@@ -1,0 +1,17 @@
+
+
+This Shopping Cart project starts with a table of items where each product shows its price, quantity, and total. You complete the project by adding **Add** and **Remove** buttons: the Add button increases the quantity and updates the item’s total, while the Remove button decreases the quantity but never allows it to go below zero. A **Checkout** button is also added, which calculates the combined total of all items in the cart using a separate function and displays the final amount on the page.
+
+
+HTML
+
+This shopping cart program displays a table of products—Coke, Kit Kat, Bar One, and Fanta—each with a product number, price, quantity, and total. Every item has an Add and Delete button that will later be controlled by JavaScript to increase or decrease the quantity and update the total cost. The page also includes placeholders (demo, total, and checkout-display) where results or totals can be shown. A Checkout button at the bottom will trigger the final total to be displayed. The layout and design come from an external CSS file, while all the shopping cart logic is handled by the shopcart.js file.
+
+JS
+
+This JavaScript code controls all the shopping cart interactions by selecting the Add, Delete, and Checkout buttons and attaching click event listeners to them. When an Add button is clicked, the code finds the correct table row, increases the quantity by one, and then updates the total price for that item using the item’s price. When a Delete button is clicked, the quantity decreases but never goes below zero, and the item’s total is recalculated. The Checkout button loops through all the product rows, adds up every item’s total amount, and displays the final grand total on the webpage in the “checkout-display” section. This script makes the shopping cart fully interactive by dynamically adjusting quantities, totals, and the final order amount.
+
+
+CSS
+
+This CSS stylesheet styles the shopping cart layout by applying a simple, clean table design and customized button appearances. It sets the font to Arial, adds solid black borders to the table, rows, and cells, and uses `border-collapse` to merge borders for a neat look. The table is centered on the page with a fixed width and height, and all text inside the table is centered. The header row has an aqua background to stand out. The checkout button is styled with a blue background, white text, centered positioning, padding, and a slight border radius. The Add and Delete buttons are given distinct colors—green for adding and red for deleting—along with white text and no borders to make them visually clear and user-friendly.
